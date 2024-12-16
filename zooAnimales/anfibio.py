@@ -3,33 +3,33 @@ from zooAnimales.animal import Animal
 class Anfibio(Animal):
     ranas=0
     salamandras=0
-    lista=[]
+    listado=[]
 
-    def __init__(self, nombre, edad, habitat, genero, color_piel,venenoso):
+    def __init__(self, nombre: str=None, edad: int=None, habitat: str=None, genero: str=None, color_piel: str=None,venenoso: bool=None):
         super().__init__(nombre, edad, habitat,genero)
         self.color_piel=color_piel
         self.venenoso=venenoso
-        Anfibio.lista.append(self)
+        Anfibio.listado.append(self)
         
     @staticmethod
-    def crearRana(nombre, edad, genero):
+    def crearRana(nombre: str=None, edad: int=None, genero: str=None) -> "Anfibio":
         Anfibio.ranas+=1
         return Anfibio(nombre,edad,"selva",genero,"rojo", True)
     
     @staticmethod
-    def crearSalamandra(nombre,edad,genero):
+    def crearSalamandra(nombre: str=None,edad: int=None,genero: str=None) -> "Anfibio":
         Anfibio.salamandras+=1
         return Anfibio(nombre,edad,"selva",genero,"negro y amarillo",False)
 
     @staticmethod
-    def CantidadAnfibios():
-        return len(Anfibio.Lista)
+    def CantidadAnfibios() -> int:
+        return len(Anfibio.listado)
     
-    def movimiento(self):
+    def movimiento(self) -> str:
         return "saltar"
     
-    def getColorPiel(self):
+    def getColorPiel(self) -> str:
         return self.color_piel
 
-    def isVenenoso(self):
+    def isVenenoso(self) -> bool:
         return self.venenoso
