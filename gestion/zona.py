@@ -8,7 +8,7 @@ class Zona:
         self.zoo = zoo
         self.animales: List[Animal] = []
 
-    def agregarAnimales(self, animal):
+    def agregarAnimales(self, animal: Animal):
         self.animales.append(animal)
 
     def cantidadAnimales(self) -> int:

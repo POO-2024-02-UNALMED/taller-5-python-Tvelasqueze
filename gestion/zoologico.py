@@ -1,5 +1,6 @@
-from typing import List
-from gestion.zona import Zona
+from typing import List, TYPE_CHECKING
+if TYPE_CHECKING:
+    from gestion.zona import Zona
 class Zoologico:
     def __init__(self, nombre: str = None, ubicacion: str = None):
         self.nombre = nombre
@@ -10,10 +11,10 @@ class Zoologico:
         self.zonas.append(zona)
 
     def cantidadTotalAnimales(self) -> int:
-        total = 0
+        cantidad = 0
         for zona in self.zonas:
             total += zona.cantidadAnimales()
-        return total
+        return cantidad
     
     def getNombre(self) -> str:
         return self.nombre

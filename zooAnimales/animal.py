@@ -1,9 +1,4 @@
-from zooAnimales.anfibio import Anfibio
-from zooAnimales.ave import Ave
-from zooAnimales.mamifero import Mamifero
-from zooAnimales.pez import Pez
-from zooAnimales.reptil import Reptil
-
+from zooAnimales.totales import totalPorTipo
 class Animal:
     totalAnimales=0
 
@@ -20,13 +15,13 @@ class Animal:
     
     @staticmethod
     def totalPorTipo() -> str:
-        return(f"Mamiferos : {Mamifero.cantidadMamiferos()}\nAves : {Ave.cantidadAves()}\nReptiles : {Reptil.cantidadReptiles()}Peces : {Pez.cantidadPeces()}\nAnfibios : {Anfibio.cantidadAnfibios()}")
-    
+        return totalPorTipo()
+
     def toString(self) -> str:
-        if self.zona==None:
+        if self.zona is None:
             return(f"Mi nombre es {self.nombre}, tengo una edad de {self.edad}, habito en {self.habitat} y mi genero es {self.genero}")
         else:
-            return f"Mi nombre es {self.nombre}, tengo una edad de {self.edad}, habito en {self.habitat} y mi genero es {self.genero}, la zona en la que me ubico es {self.zona.get_nombre()}, en el {self.zona.get_zoo().get_nombre()}."
+            return f"Mi nombre es {self.nombre}, tengo una edad de {self.edad}, habito en {self.habitat} y mi genero es {self.genero}, la zona en la que me ubico es {self.zona.getNombre()}, en el {self.zona.getZoo().getNombre()}."
         
     def getNombre(self) -> str:
         return self.nombre

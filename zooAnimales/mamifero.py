@@ -12,12 +12,12 @@ class Mamifero(Animal):
         Mamifero.listado.append(self)
 
     @staticmethod
-    def crearLeon(nombre:str=None,edad:int=None,genero:str=None) -> "Mamifero":
+    def crearLeon(nombre:str,edad:int,genero:str) -> "Mamifero":
         Mamifero.leones +=1
         return Mamifero(nombre,edad,"selva",genero,True,4)
     
     @staticmethod
-    def crearCaballo(nombre:str=None,edad:int=None,genero:str=None) -> "Mamifero":
+    def crearCaballo(nombre:str,edad:int,genero:str) -> "Mamifero":
         Mamifero.caballos +=1
         return Mamifero(nombre,edad,"pradera",genero,True,4)
     
